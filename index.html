@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="script.js">
+    <title>Simon</title>
+</head>
+<body>
+    <div class="ContenedorBotones">
+        <input onmousedown="PresionarColorRojo()" onmouseup="RetomarColorRojo()" onclick="VerificarSecuencia(1)" id="BotonRojo" type="button" value="">
+        <input onmousedown="PresionarColorVerde()" onmouseup="RetomarColorVerde()" onclick="VerificarSecuencia(2)" id="BotonVerde" type="button" value="">
+    </div>
+    <div class="ContendorBotonInicio">
+        <input onclick="ComenzarJuego()"  id="BotonInicio" type="button" value="INICIO">
+    </div>
+    <div class="ContenedorBotones">
+        <input onmousedown="PresionarColorAmarillo()" onmouseup="RetomarColorAmarillo()" onclick="VerificarSecuencia(3)" id="BotonAmarillo" type="button" value="">
+        <input  onmousedown="PresionarColorAzul()" onmouseup="RetomarColorAzul()" onclick="VerificarSecuencia(4)" id="BotonAzul" type="button" value="">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
