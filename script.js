@@ -25,7 +25,7 @@ BotonRojo.addEventListener('mouseup', function () {
  BotonRojo.addEventListener('click', function () {
     VerificarSecuencia(1);
  });
- 
+
 //////////////////////////////////////////////////////////////////
 
 var BotonVerde = document.getElementById("BotonVerde");
@@ -176,9 +176,24 @@ function PresionarSecuencia(NumeroElegido){
     }
 }
 
+var BotonInicio = document.getElementById("BotonInicio");
+
 function ComenzarJuego(){
     PosicionSecuencia = 0;
     Secuencia = []; 
     ModoJugador = false;
     ElegirColor();
 }
+BotonInicio.addEventListener('click', function () {
+    ComenzarJuego();
+});
+
+
+document.getElementById("BotonNombre").addEventListener("click", function(event) {
+    var NombreJugador = document.getElementById("Nombre").value;
+    // Comprobar si el valor ingresado cumple con el patrón
+    if (NombreJugador.length < 3) {
+      alert("Debes ingresar al menos 3 letras.");
+      event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+    }
+});

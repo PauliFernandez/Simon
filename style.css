@@ -1,5 +1,8 @@
 body{
     background-color: coral;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
 .ContenedorBotones{
@@ -66,4 +69,25 @@ body{
   .ContendorBotonInicio {
      margin-top: 20px;
   }
+}
+
+.MenuContenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+#CotenedorNombre{
+  background-color: black;
+  padding: 10px;
+  width: auto;
+  color: rgb(255, 255, 255);
+}
+
+#Nombre{
+  border: 1px solid #ccc;
+  padding: 10px;
 }

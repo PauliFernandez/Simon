@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="script.js"/>
     <title>Simon</title>
 </head>
 <body>
+    <div class="MenuContenedor">
+        <div id="CotenedorNombre">
+            <h2>Ingrese su nombre</h2>
+            <input type="text" id="Nombre" placeholder="Ingresa tu nombre" pattern="[A-Za-z]{3,}" required/>
+            <button type="button"  id="BotonNombre" >Confrimar</button>
+        </div>
+    </div>
     <div class="ContenedorBotones">
-        <input class="BotonJuego" id="BotonRojo"  type="button" value="">
-        <input class="BotonJuego" id="BotonVerde" type="button" value="">
+        <input class="BotonJuego" id="BotonRojo"  type="button" value=""/>
+        <input class="BotonJuego" id="BotonVerde" type="button" value=""/>
     </div>
     <div class="ContendorBotonInicio">
-        <input onclick="ComenzarJuego()"  id="BotonInicio" type="button" value="INICIO">
+        <input  id="BotonInicio" type="button" value="INICIO"/>
     </div>
     <div class="ContenedorBotones">
-        <input class="BotonJuego" id="BotonAmarillo" type="button" value="">
-        <input class="BotonJuego" id="BotonAzul" type="button" value="">
+        <input class="BotonJuego" id="BotonAmarillo" type="button" value=""/>
+        <input class="BotonJuego" id="BotonAzul" type="button" value=""/>
     </div>
     <script src="script.js"></script>
 </body>
