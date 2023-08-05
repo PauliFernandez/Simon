@@ -11,8 +11,8 @@
     <div class="MenuContenedor">
         <div id="CotenedorNombre">
             <h2>Ingrese su nombre</h2>
-            <input type="text" id="Nombre" placeholder="Ingresa tu nombre" pattern="[A-Za-z]{3,}" required/>
-            <button type="button"  id="BotonNombre" >Confrimar</button>
+            <input type="text" id="Nombre" placeholder="Ingresa tu nombre" required/>
+            <button type="button"  id="BotonNombre">Confrimar</button>
         </div>
     </div>
     <div class="ContenedorBotones">
@@ -25,6 +25,12 @@
     <div class="ContenedorBotones">
         <input class="BotonJuego" id="BotonAmarillo" type="button" value=""/>
         <input class="BotonJuego" id="BotonAzul" type="button" value=""/>
+    </div>
+    <div class="ContenedorModal">
+        <div id="FondoModal">
+            <p id="ModalMensaje">Ingrese mínimo 3 letras</p>
+            <button type="button"  id="CerrarModal">Cerrar</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

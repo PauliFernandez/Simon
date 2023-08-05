@@ -193,7 +193,13 @@ document.getElementById("BotonNombre").addEventListener("click", function(event)
     var NombreJugador = document.getElementById("Nombre").value;
     // Comprobar si el valor ingresado cumple con el patrón
     if (NombreJugador.length < 3) {
-      alert("Debes ingresar al menos 3 letras.");
-      event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+      document.getElementsByClassName("ContenedorModal")[0].classList.add("MostrarModal");
+      return;
     }
+    document.getElementsByClassName("MenuContenedor")[0].style.display = "none";
+    ComenzarJuego();
+});
+document.getElementById("CerrarModal").addEventListener("click", function(event) {
+      document.getElementsByClassName("ContenedorModal")[0].classList.remove("MostrarModal");
+    
 });

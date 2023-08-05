@@ -71,13 +71,14 @@ body{
   }
 }
 
-.MenuContenedor{
+.MenuContenedor, .ContenedorModal{
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   position: absolute;
   width: 100%;
+  top: 0;
 }
 
 #CotenedorNombre{
@@ -90,4 +91,19 @@ body{
 #Nombre{
   border: 1px solid #ccc;
   padding: 10px;
+}
+
+#FondoModal{
+  background-color: red;
+  padding: 10px;
+  width: auto;
+  color: rgb(0, 0, 0);
+}
+
+.ContenedorModal{
+  display: none;
+}
+
+.ContenedorModal.MostrarModal{
+  display: flex;
 }
