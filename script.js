@@ -1,7 +1,7 @@
 var Secuencia = [];
 var PosicionSecuencia = 0;
 var ModoJugador = false;
-
+var Puntaje = 0;
 ///////////////////////////////////////////////////////////////////
 
 var BotonRojo = document.getElementById("BotonRojo");
@@ -133,10 +133,14 @@ function VerificarSecuencia(NumeroElegido){
         else{
             PosicionSecuencia = PosicionSecuencia + 1;
         }
+        Puntaje = Puntaje + 1;
+        document.getElementById("Puntuacion").innerHTML = Puntaje;
     }
     else {
         ModoJugador = false;
-        alert("Perdiste")
+        document.getElementById("ModalMensaje").innerText = "PERDISTE"; 
+        document.getElementsByClassName("ContenedorModal")[0].classList.add("MostrarModal");
+        document.getElementsByClassName("MenuContenedor")[0].style.display = "flex";
     }
 }
 
@@ -187,7 +191,6 @@ function ComenzarJuego(){
 BotonInicio.addEventListener('click', function () {
     ComenzarJuego();
 });
-
 
 document.getElementById("BotonNombre").addEventListener("click", function(event) {
     var NombreJugador = document.getElementById("Nombre").value;
