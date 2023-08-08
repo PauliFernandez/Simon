@@ -107,7 +107,7 @@ body{
 	display: flex;
 }
 
-#CotenedorNombre,
+#ContenedorNombre,
 #FondoModal {
 	background-color: rgb(34, 34, 34);
 	padding: 16px;
@@ -117,7 +117,7 @@ body{
 	box-shadow: 0px 4px 8px -3px rgb(0, 0, 0);
 }
 
-#CotenedorNombre .titulo,
+#ContenedorNombre .titulo,
 #FondoModal .titulo {
 	text-align: center;
 	font-weight: 600;
