@@ -23,30 +23,32 @@
     <main>
         <div class="MenuContenedor">
             <div id="CotenedorNombre">
-                    <a href="https://github.com/PauliFernandez/Simon" target="_blank">Repositorio</a>
-                    <h2>Ingrese su nombre</h2>
+                <div class="titulo">Ingrese su nombre</div>
                 <input type="text" id="Nombre" placeholder="Ingresa tu nombre" required/>
-                <button type="button"  id="BotonNombre">Comenzar</button>
+                <div class="ContenedorBoton"><button type="button" id="BotonNombre">Confirmar</button></div>
             </div>
         </div>
-        <div class="ContenedorBotones">
-            <input class="BotonJuego" id="BotonRojo"  type="button" value=""/>
-            <input class="BotonJuego" id="BotonVerde" type="button" value=""/>
-        </div>
-        <div class="ContendorBotonInicio">
-            <input  id="BotonInicio" type="button"/>
-        </div>
-        <div class="ContendorPuntuacion">
-            <p>Puntuación: <span id="Puntuacion"></span> </p>
-        </div>
-        <div class="ContenedorBotones">
-            <input class="BotonJuego" id="BotonAmarillo" type="button" value=""/>
-            <input class="BotonJuego" id="BotonAzul" type="button" value=""/>
+        
+        <div class="ContenedorMayorBotones">
+            <div class="ContenedorBotones">
+                <input class="BotonJuego" id="BotonRojo"  type="button" value=""/>
+                <input class="BotonJuego" id="BotonVerde" type="button" value=""/>
+                <input class="BotonJuego" id="BotonAmarillo" type="button" value=""/>
+                <input class="BotonJuego" id="BotonAzul" type="button" value=""/>
+    
+                <div class="ContendorBotonInicio">
+                    <button  id="BotonInicio" type="button">Empezar</button>
+                </div>
+                <div class="ContendorPuntuacion">
+                    <p>Puntuación: <span id="Puntuacion"></span> </p>
+                </div>
+            </div>
         </div>
         <div class="ContenedorModal">
             <div id="FondoModal">
-                <p id="ModalMensaje"></p>
-                <button type="button"  id="CerrarModal">Cerrar</button>
+                <div id="ModalMensaje" class="titulo"></div>
+                <div id="PuntuacionAnterior" class="titulo"></div>
+                <div class="cerrar-modal-contenedor"><button type="button"  id="CerrarModal">Volver a jugar</button></div>
             </div>
         </div>
     </main>

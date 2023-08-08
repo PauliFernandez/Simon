@@ -11,11 +11,13 @@ BotonRojo.addEventListener('mousedown', function () {
 });
 function PresionarColorRojo(){
     // Cambia el color del botón
-    BotonRojo.style.backgroundColor = "rgb(255, 112, 112)";
+    if (!ModoJugador){
+        BotonRojo.classList.add('show');
+    }
 }
 
 function RetomarColorRojo(){
-    BotonRojo.style.backgroundColor = "rgb(255, 0, 0)";
+    BotonRojo.classList.remove('show');
 }
 
 BotonRojo.addEventListener('mouseup', function () {
@@ -34,12 +36,14 @@ BotonVerde.addEventListener('mousedown', function () {
    PresionarColorVerde();
 });
 function PresionarColorVerde(){
+    if (!ModoJugador){
     // Cambia el color del botón
-    BotonVerde.style.backgroundColor = "rgb(66, 117, 66)";
+    BotonVerde.classList.add('show');
+    }
 }
 
 function RetomarColorVerde(){
-    BotonVerde.style.backgroundColor = "rgb(0, 128, 0)";
+    BotonVerde.classList.remove('show');
 }
 
 BotonVerde.addEventListener('mouseup', function () {
@@ -58,12 +62,14 @@ BotonAmarillo.addEventListener('mousedown', function () {
    PresionarColorAmarillo();
 });
 function PresionarColorAmarillo(){
+    if (!ModoJugador){
     // Cambia el color del botón
-    BotonAmarillo.style.backgroundColor = "rgb(255, 255, 152)";
+    BotonAmarillo.classList.add('show');
+    }
 }
 
 function RetomarColorAmarillo(){
-    BotonAmarillo.style.backgroundColor = "rgb(255, 255, 0)";
+    BotonAmarillo.classList.remove('show');
 }
 
 BotonAmarillo.addEventListener('mouseup', function () {
@@ -82,12 +88,14 @@ BotonAzul.addEventListener('mousedown', function () {
    PresionarColorAzul();
 });
 function PresionarColorAzul(){
+    if (!ModoJugador){
     // Cambia el color del botón
-    BotonAzul.style.backgroundColor = "rgb(82, 82, 255)";
+    BotonAzul.classList.add('show');
+    }
 }
 
 function RetomarColorAzul(){
-    BotonAzul.style.backgroundColor = "rgb(0, 0, 255)";
+    BotonAzul.classList.remove('show');
 }
 
 BotonAzul.addEventListener('mouseup', function () {
@@ -109,7 +117,7 @@ function ElegirColor(){
             PosicionSecuencia = PosicionSecuencia + 1;
         }
         else if (PosicionSecuencia < Secuencia.length) { //aun esta ejecutando la secuencia, presiono el de la posicion actual
-             PresionarSecuencia(Secuencia[PosicionSecuencia])
+             PresionarSecuencia(Secuencia[PosicionSecuencia]);
         }
         else{ //se recorrio la secuencia, empieza el turno del jugadador
             PosicionSecuencia = 0;
@@ -138,8 +146,12 @@ function VerificarSecuencia(NumeroElegido){
     }
     else {
         ModoJugador = false;
-        MostrarModal("PERDISTE")
-        document.getElementsByClassName("MenuContenedor")[0].style.display = "flex";
+        document.querySelector('.ContendorPuntuacion').classList.remove('show');
+        var NombreJugador = document.getElementById("Nombre").value;
+        document.getElementById("ModalMensaje").innerText = `Perdiste ${NombreJugador}`; 
+        document.querySelector("#PuntuacionAnterior").innerText = `Tu puntuación fue: ${Puntaje}`;
+        document.getElementsByClassName("ContenedorModal")[0].classList.add("MostrarModal");
+        // MostrarInscripcion()
     }
 }
 
@@ -187,10 +199,17 @@ function ComenzarJuego(){
     ModoJugador = false;
     ElegirColor();
 }
-BotonInicio.addEventListener('click', function () {
-    ComenzarJuego();
-});
 
+
+function MostrarInscripcion() {
+    document.querySelector(".MenuContenedor").classList.add('show');
+ }
+
+BotonInicio.addEventListener('click', function () {
+    BotonInicio.style.display = "none"
+    document.querySelector('.ContendorPuntuacion').classList.add('show')
+    MostrarInscripcion()
+});
 
 document.getElementById("BotonNombre").addEventListener("click", function(event) {
     var NombreJugador = document.getElementById("Nombre").value;
@@ -199,12 +218,13 @@ document.getElementById("BotonNombre").addEventListener("click", function(event)
         MostrarModal("Ingrese mínimo 3 letras");
         return;
     }
-    document.getElementsByClassName("MenuContenedor")[0].style.display = "none";
+    document.querySelector(".MenuContenedor").classList.remove('show');
     ComenzarJuego();
 });
 
 document.getElementById("CerrarModal").addEventListener("click", function(event) {
     document.getElementsByClassName("ContenedorModal")[0].classList.remove("MostrarModal");
+    MostrarInscripcion();
 });
 
 function MostrarModal(Mensaje) {

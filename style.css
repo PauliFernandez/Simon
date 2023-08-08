@@ -1,123 +1,194 @@
 body{
-    background-color: coral;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+	background: #272b34;;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.ContenedorMayorBotones {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
 }
 
 .ContenedorBotones{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    padding-left: 10px;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: repeat(2, auto);
+	flex-grow: 1;
+	gap: 16px;
+	position: relative;
 }
 
 .BotonJuego{
-  width: 100%;
-  height: 200px;
-  border-radius: 50px;
-  max-width: 200px;
-  max-height: 200px;
-  display: inline-block;
+	width: 150px;
+	height: 150px;
+	margin: 0 !important;
+	padding: 0;
+	border: none;
+	border-radius: 16px;
+}
+
+@media (min-width: 576px) {
+	.BotonJuego{
+		width: 200px;
+		height: 200px;
+	}	
 }
 
 #BotonRojo {
-  background-color: red;
-  margin-right: 10px;
+	background: rgb(244, 67, 54);
 }
 
 #BotonVerde {
-  background-color: green;
-}
-
-.ContendorPuntuacion{
-    display: flex;
-    justify-content: center;
-}
-
-.ContendorPuntuacion p{
-    background-color: rgb(191, 1, 233);
-    font-weight: bold;
+	background: rgb(76, 175, 80);
 }
 
 #BotonAmarillo {
-  background-color: yellow;
-  margin-right: 10px;
+	background: rgb(255, 235, 59);
 }
 
 #BotonAzul {
-  background-color: blue;
+	background: rgb(63, 81, 181);
 }
 
-  /* Adjust the layout for larger screens (e.g., tablets and desktops) */
-@media screen and (min-width: 768px) {
-  .ContenedorBotones {
-      display: flex; 
-  }
-  
-  .ContendorPuntuacion {
-      display: flex;
-      justify-content: center;
-  }
+#BotonRojo.show {
+	background: rgb(247, 126, 118);
 }
-  
-  /* Adjust the layout for smaller screens (e.g., mobile devices) */
-@media screen and (max-width: 767px) {
-  .ContendorPuntuacion {
-     margin-top: 20px;
-  }
+
+#BotonVerde.show {
+	background: rgb(131, 218, 134);
+}
+
+#BotonAmarillo.show {
+	background: rgb(255, 243, 139);
+}
+
+#BotonAzul.show {
+	background: rgb(111, 122, 184);
+}
+
+.ContendorPuntuacion{
+	display: none;
+	margin-top: 2rem;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.ContendorPuntuacion.show {
+	display: flex;
+}
+
+.ContendorPuntuacion p{
+	font-weight: bold;
+	color: white;
 }
 
 .MenuContenedor, .ContenedorModal{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	z-index: 1;
 }
 
-#CotenedorNombre{
-  background-color: black;
-  padding: 10px;
-  width: auto;
-  color: rgb(255, 255, 255);
+.MenuContenedor.show,
+.ContenedorModal.show{
+	display: flex;
+}
+
+#CotenedorNombre,
+#FondoModal {
+	background-color: #222;
+	padding: 16px;
+	width: auto;
+	color: white;
+	border-radius: 8px;
+	box-shadow: 0px 4px 8px -3px black;
+}
+
+#CotenedorNombre .titulo,
+#FondoModal .titulo {
+	text-align: center;
+	font-weight: 600;
+	font-size: 1.2rem;
+	margin-bottom: 16px;
+}
+
+#FondoModal {
+	padding: 24px 60px;
 }
 
 #Nombre{
-  border: 1px solid #ccc;
-  padding: 10px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 16px;
+	display: block;
 }
 
-#FondoModal{
-  background-color: red;
-  padding: 10px;
-  width: auto;
-  color: rgb(0, 0, 0);
+.ContenedorBoton {
+	display: flex;
+	justify-content: center;
 }
+
+.cerrar-modal-contenedor {
+	display: flex;
+	justify-content: center;
+}
+
+#BotonNombre,
+#CerrarModal {
+	background: #9C27B0;
+	border: none;
+	padding: 0.7rem 2rem;
+	color: white;
+	font-weight: 600;
+	border-radius: 50px;
+}
+
+/* #FondoModal{
+	background-color: #f8b0b0;
+	border: 1px solid #c20000;
+	padding: 10px;
+	width: auto;
+	color: #d61111;
+	border-radius: 8px;
+	text-align: center;
+} */
 
 .ContenedorModal{
-  display: none;
+	display: none;
 }
 
 .ContenedorModal.MostrarModal{
-  display: flex;
+	display: flex;
 }
 
-form#FormularioContacto {
-  padding: 30px;
-  margin: 30px;
-  border: 1px dotted rgb(0, 0, 0);
-  display: inline-block;
+.ContendorBotonInicio {
+	margin-top: 2rem;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
-form#FormularioContacto .FormularioBloque {
-  margin: 10px;
-}
-
-form#FormularioContacto .FormularioBloque label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+#BotonInicio {
+	background: #9C27B0;
+	border: none;
+	padding: 0.7rem 2rem;
+	color: white;
+	font-weight: 600;
+	border-radius: 50px;
+	cursor: pointer;
 }
