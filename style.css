@@ -12,8 +12,9 @@ body{
 .ContenedorMayorBotones {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: baseline;
 	flex-grow: 1;
+	margin-top: 20px;
 }
 
 .ContenedorBotones{
@@ -192,3 +193,26 @@ body{
 	border-radius: 50px;
 	cursor: pointer;
 }
+
+
+header{
+	background-color: rgb(156, 39, 176);
+	width: 100%;
+}
+
+header nav{
+	margin: 20px 0;
+}
+
+header nav a{
+	color: rgb(255, 255, 255);
+	font-weight: 600;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+header nav li{
+	display: inline;
+}
+
+
