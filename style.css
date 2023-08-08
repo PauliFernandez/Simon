@@ -1,5 +1,5 @@
 body{
-	background: #272b34;;
+	background: rgb(39, 43, 52);;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -88,7 +88,7 @@ body{
 
 .ContendorPuntuacion p{
 	font-weight: bold;
-	color: white;
+	color: rgb(255, 255, 255);
 }
 
 .MenuContenedor, .ContenedorModal{
@@ -109,12 +109,12 @@ body{
 
 #CotenedorNombre,
 #FondoModal {
-	background-color: #222;
+	background-color: rgb(34, 34, 34);
 	padding: 16px;
 	width: auto;
-	color: white;
+	color: rgb(255, 255, 255);
 	border-radius: 8px;
-	box-shadow: 0px 4px 8px -3px black;
+	box-shadow: 0px 4px 8px -3px rgb(0, 0, 0);
 }
 
 #CotenedorNombre .titulo,
@@ -130,7 +130,7 @@ body{
 }
 
 #Nombre{
-	border: 1px solid #ccc;
+	border: 1px solid rgb(204, 204, 204);
 	padding: 10px;
 	border-radius: 4px;
 	margin-bottom: 16px;
@@ -149,10 +149,10 @@ body{
 
 #BotonNombre,
 #CerrarModal {
-	background: #9C27B0;
+	background: rgb(156, 39, 176);
 	border: none;
 	padding: 0.7rem 2rem;
-	color: white;
+	color: rgb(255, 255, 255);
 	font-weight: 600;
 	border-radius: 50px;
 }
@@ -184,10 +184,10 @@ body{
 }
 
 #BotonInicio {
-	background: #9C27B0;
+	background: rgb(156, 39, 176);
 	border: none;
 	padding: 0.7rem 2rem;
-	color: white;
+	color: rgb(255, 255, 255);
 	font-weight: 600;
 	border-radius: 50px;
 	cursor: pointer;
