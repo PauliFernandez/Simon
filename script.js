@@ -63,10 +63,8 @@ BotonAmarillo.addEventListener('mousedown', function () {
     }
 });
 function PresionarColorAmarillo(){
-    if (ModoJugador){
-        // Cambia el color del botón
-        BotonAmarillo.classList.add('show');
-    }
+    // Cambia el color del botón
+    BotonAmarillo.classList.add('show');
 }
 
 function RetomarColorAmarillo(){
