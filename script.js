@@ -7,13 +7,13 @@ var Puntaje = 0;
 var BotonRojo = document.getElementById("BotonRojo");
 
 BotonRojo.addEventListener('mousedown', function () {
-   PresionarColorRojo();
+    if (ModoJugador){
+        PresionarColorRojo();
+    }
 });
 function PresionarColorRojo(){
     // Cambia el color del botón
-    if (ModoJugador){
-        BotonRojo.classList.add('show');
-    }
+    BotonRojo.classList.add('show');
 }
 
 function RetomarColorRojo(){
@@ -33,12 +33,12 @@ BotonRojo.addEventListener('mouseup', function () {
 var BotonVerde = document.getElementById("BotonVerde");
 
 BotonVerde.addEventListener('mousedown', function () {
-   PresionarColorVerde();
+    if (ModoJugador){
+        PresionarColorVerde();
+    }
 });
 function PresionarColorVerde(){
-    if (ModoJugador){
-        BotonVerde.classList.add('show');
-    }
+    BotonVerde.classList.add('show');
 }
 
 function RetomarColorVerde(){
@@ -58,7 +58,9 @@ BotonVerde.addEventListener('mouseup', function () {
 var BotonAmarillo = document.getElementById("BotonAmarillo");
 
 BotonAmarillo.addEventListener('mousedown', function () {
-   PresionarColorAmarillo();
+    if (ModoJugador){
+        PresionarColorAmarillo();
+    }
 });
 function PresionarColorAmarillo(){
     if (ModoJugador){
@@ -84,13 +86,13 @@ BotonAmarillo.addEventListener('mouseup', function () {
 var BotonAzul = document.getElementById("BotonAzul");
 
 BotonAzul.addEventListener('mousedown', function () {
-   PresionarColorAzul();
+    if (ModoJugador){
+        PresionarColorAzul();
+    }
 });
 function PresionarColorAzul(){
-    if (ModoJugador){
-        // Cambia el color del botón
-        BotonAzul.classList.add('show');
-    }
+    // Cambia el color del botón
+    BotonAzul.classList.add('show');
 }
 
 function RetomarColorAzul(){
