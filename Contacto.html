@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon - Contacto</title>
+    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="scriptFormulario.js"/>
+</head>
+<body>
+    <form id="FormularioContacto">
+        <div class="FormularioBloque">
+            <h1>Simon - Formulario de Contacto</h1>
+        </div>
+        <div class="FormularioBloque">
+            <label>Nombre</label>
+            <input id="NombreContacto" type="text">
+        </div>
+        <div class="FormularioBloque">
+            <label>Correo</label>
+            <input id="CorreoContacto" type="text">
+        </div>
+        <div class="FormularioBloque">
+            <label>Mensaje</label>
+            <textarea id="MensajeContacto" id="Mensaje" cols="30" rows="10"></textarea>
+        </div>
+        <div class="FormularioBloque">
+            <button type="button" id="EnviarContacto">Enviar</button>
+        </div>
+    </form>
+    <div class="ContenedorModal">
+        <div id="FondoModal">
+            <p id="ModalMensaje"></p>
+            <button type="button"  id="CerrarModal">Cerrar</button>
+        </div>
+    </div>
+    <script src="scriptFormulario.js"></script>
+</body>
+</html>

@@ -138,8 +138,7 @@ function VerificarSecuencia(NumeroElegido){
     }
     else {
         ModoJugador = false;
-        document.getElementById("ModalMensaje").innerText = "PERDISTE"; 
-        document.getElementsByClassName("ContenedorModal")[0].classList.add("MostrarModal");
+        MostrarModal("PERDISTE")
         document.getElementsByClassName("MenuContenedor")[0].style.display = "flex";
     }
 }
@@ -192,19 +191,23 @@ BotonInicio.addEventListener('click', function () {
     ComenzarJuego();
 });
 
+
 document.getElementById("BotonNombre").addEventListener("click", function(event) {
     var NombreJugador = document.getElementById("Nombre").value;
     // Comprobar si el valor ingresado cumple con el patrón
     if (NombreJugador.length < 3) {
-        document.getElementById("ModalMensaje").innerText = "Ingrese mínimo 3 letras"; 
-        document.getElementsByClassName("ContenedorModal")[0].classList.add("MostrarModal");
+        MostrarModal("Ingrese mínimo 3 letras");
         return;
     }
     document.getElementsByClassName("MenuContenedor")[0].style.display = "none";
     ComenzarJuego();
 });
+
 document.getElementById("CerrarModal").addEventListener("click", function(event) {
-      document.getElementsByClassName("ContenedorModal")[0].classList.remove("MostrarModal");
-    
+    document.getElementsByClassName("ContenedorModal")[0].classList.remove("MostrarModal");
 });
 
+function MostrarModal(Mensaje) {
+    document.getElementById("ModalMensaje").innerText = Mensaje; 
+    document.getElementsByClassName("ContenedorModal")[0].classList.add("MostrarModal");
+}

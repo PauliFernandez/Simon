@@ -104,3 +104,20 @@ body{
 .ContenedorModal.MostrarModal{
   display: flex;
 }
+
+form#FormularioContacto {
+  padding: 30px;
+  margin: 30px;
+  border: 1px dotted rgb(0, 0, 0);
+  display: inline-block;
+}
+
+form#FormularioContacto .FormularioBloque {
+  margin: 10px;
+}
+
+form#FormularioContacto .FormularioBloque label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
