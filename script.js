@@ -11,7 +11,7 @@ BotonRojo.addEventListener('mousedown', function () {
 });
 function PresionarColorRojo(){
     // Cambia el color del botón
-    if (!ModoJugador){
+    if (ModoJugador){
         BotonRojo.classList.add('show');
     }
 }
@@ -36,9 +36,8 @@ BotonVerde.addEventListener('mousedown', function () {
    PresionarColorVerde();
 });
 function PresionarColorVerde(){
-    if (!ModoJugador){
-    // Cambia el color del botón
-    BotonVerde.classList.add('show');
+    if (ModoJugador){
+        BotonVerde.classList.add('show');
     }
 }
 
@@ -62,9 +61,9 @@ BotonAmarillo.addEventListener('mousedown', function () {
    PresionarColorAmarillo();
 });
 function PresionarColorAmarillo(){
-    if (!ModoJugador){
-    // Cambia el color del botón
-    BotonAmarillo.classList.add('show');
+    if (ModoJugador){
+        // Cambia el color del botón
+        BotonAmarillo.classList.add('show');
     }
 }
 
@@ -88,9 +87,9 @@ BotonAzul.addEventListener('mousedown', function () {
    PresionarColorAzul();
 });
 function PresionarColorAzul(){
-    if (!ModoJugador){
-    // Cambia el color del botón
-    BotonAzul.classList.add('show');
+    if (ModoJugador){
+        // Cambia el color del botón
+        BotonAzul.classList.add('show');
     }
 }
 
