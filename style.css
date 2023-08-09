@@ -29,7 +29,7 @@ body{
 .BotonJuego{
 	width: 150px;
 	height: 150px;
-	margin: 0 !important;
+	margin: 0;
 	padding: 0;
 	border: none;
 	border-radius: 16px;
@@ -158,16 +158,6 @@ body{
 	border-radius: 50px;
 }
 
-/* #FondoModal{
-	background-color: #f8b0b0;
-	border: 1px solid #c20000;
-	padding: 10px;
-	width: auto;
-	color: #d61111;
-	border-radius: 8px;
-	text-align: center;
-} */
-
 .ContenedorModal{
 	display: none;
 }
@@ -177,7 +167,7 @@ body{
 }
 
 .ContendorBotonInicio {
-	margin-top: 2rem;
+	margin-top: 24px;
 	position: absolute;
 	top: 100%;
 	left: 50%;
@@ -215,4 +205,26 @@ header nav li{
 	display: inline;
 }
 
+form{
+	background-color: rgb(156, 39, 176);
+	padding: 50px;
+}
+
+.FormularioBloque h1{
+	color: rgb(255, 255, 255);
+	font-weight: 600;
+	font-size: 2rem;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.FormularioBloque label{
+	color: rgb(255, 255, 255);
+	font-weight: 50;
+	font-size: 1rem;
+	width: 100px;
+	display: inline-block;
+	margin-bottom: 20px;
+	vertical-align: top;
+}
 

@@ -29,7 +29,7 @@ BotonEnviar.addEventListener('click', function () {
         return;
     }
     
-    location.href = "mailto:contacto@simon.com?subject=Contacto de " + CampoNombre.value  + "&body:" + encodeURIComponent("Nombre: " + CampoNombre.value + ". Correo: " + CampoCorreo.value + ". Mensaje: " + CampoMensaje.value);
+    location.href = "mailto:contacto@simon.com?subject=Contacto de " + CampoNombre.value  + "&body=" + "Nombre: " + CampoNombre.value + ". Correo: " + CampoCorreo.value + ". Mensaje: " + CampoMensaje.value;
 });
 
 function EsAlfanumerico(Cadena) {
