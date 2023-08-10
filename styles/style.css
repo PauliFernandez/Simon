@@ -36,7 +36,7 @@ header nav li {
   margin-top: 20px;
 }
 
-.ContenedorBotones {
+.ContenedorMayorBotones .ContenedorBotones {
   display: grid; /*Convierte el contenido en una tabla*/
   grid-template-columns: repeat(
     2,
@@ -47,7 +47,7 @@ header nav li {
   position: relative;
 }
 
-.BotonJuego {
+.ContenedorMayorBotones .ContenedorBotones .BotonJuego {
   width: 150px;
   height: 150px;
   margin: 0;
@@ -88,7 +88,7 @@ header nav li {
   background: rgb(111, 122, 184);
 }
 
-.ContendorPuntuacion {
+.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion {
   display: none; /* Oculto contenedor de puntuación*/
   margin-top: 32px;
   position: absolute; /*Flota el elemento dentro del contenedor padre*/
@@ -99,14 +99,32 @@ header nav li {
   ); /*Mueve el elemento sin cambiar el eje, utilizando el left como referencia*/
 }
 
-.ContendorPuntuacion.show {
+.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion.show {
   /*se utiliza la clase show para mostrar el contenedor puntuacion por js*/
   display: flex;
 }
 
-.ContendorPuntuacion p {
+.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion p {
   font-weight: bold;
   color: rgb(255, 255, 255);
+}
+
+.ContenedorMayorBotones .ContendorBotonInicio {
+  margin-top: 24px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#BotonInicio {
+  background: rgb(156, 39, 176);
+  border: none;
+  padding: 12px 32px;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
 .MenuContenedor,
@@ -155,12 +173,12 @@ header nav li {
   margin-bottom: 16px;
 }
 
-.ContenedorBoton {
+.MenuContenedor .ContenedorBoton {
   display: flex;
   justify-content: center;
 }
 
-.cerrar-modal-contenedor {
+.ContenedorModal .CerrarModalContenedor {
   display: flex;
   justify-content: center;
 }
@@ -183,31 +201,14 @@ header nav li {
   display: flex;
 }
 
-.ContendorBotonInicio {
-  margin-top: 24px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#BotonInicio {
-  background: rgb(156, 39, 176);
-  border: none;
-  padding: 12px 32px;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-form {
+/* Estilos para página de fomulario */
+form#FormularioContacto {
   background-color: rgb(156, 39, 176);
   padding: 50px;
   margin-top: 20px;
 }
 
-.FormularioBloque h1 {
+form#FormularioContacto .FormularioBloque h1 {
   color: rgb(255, 255, 255);
   font-weight: 600;
   font-size: 32px;
@@ -215,7 +216,7 @@ form {
   text-align: center;
 }
 
-.FormularioBloque label {
+form#FormularioContacto .FormularioBloque label {
   color: rgb(255, 255, 255);
   font-weight: 50;
   font-size: 16px;
@@ -227,7 +228,7 @@ form {
 
 /* Media query para móviles */
 @media (min-width: 576px) {
-  .BotonJuego {
+  .ContenedorMayorBotones .ContenedorBotones .BotonJuego {
     width: 200px;
     height: 200px;
   }
