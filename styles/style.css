@@ -29,6 +29,29 @@ header nav li {
   display: inline;
 }
 
+.MenuContenedor,
+.ContenedorModal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1; /*Indica una posición delante del objeto 0 index 0*/
+}
+
+.MenuContenedor.show, /*se utiliza la clase show para mostrar el modal ingresar nombre por js*/
+.ContenedorModal.show {
+  /*se utiliza la clase show para mostrar el modal de mensaje y puntuacion por js*/
+  display: flex;
+}
+
+.MenuContenedor .ContenedorBoton {
+  display: flex;
+  justify-content: center;
+}
+
 .ContenedorMayorBotones {
   display: flex;
   justify-content: center;
@@ -54,6 +77,48 @@ header nav li {
   padding: 0;
   border: none;
   border-radius: 16px;
+}
+
+.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion {
+  display: none; /* Oculto contenedor de puntuación*/
+  margin-top: 32px;
+  position: absolute; /*Flota el elemento dentro del contenedor padre*/
+  top: 100%;
+  left: 50%; /*Muevo el eje izquierdo del contenido al 50%*/
+  transform: translateX(
+    -50%
+  ); /*Mueve el elemento sin cambiar el eje, utilizando el left como referencia*/
+}
+
+.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion.show {
+  /*se utiliza la clase show para mostrar el contenedor puntuacion por js*/
+  display: flex;
+}
+
+.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion p {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.ContenedorMayorBotones .ContendorBotonInicio {
+  margin-top: 24px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ContenedorModal {
+  display: none;
+}
+
+.ContenedorModal.MostrarModal {
+  display: flex;
+}
+
+.ContenedorModal .CerrarModalContenedor {
+  display: flex;
+  justify-content: center;
 }
 
 #BotonRojo {
@@ -88,35 +153,6 @@ header nav li {
   background: rgb(111, 122, 184);
 }
 
-.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion {
-  display: none; /* Oculto contenedor de puntuación*/
-  margin-top: 32px;
-  position: absolute; /*Flota el elemento dentro del contenedor padre*/
-  top: 100%;
-  left: 50%; /*Muevo el eje izquierdo del contenido al 50%*/
-  transform: translateX(
-    -50%
-  ); /*Mueve el elemento sin cambiar el eje, utilizando el left como referencia*/
-}
-
-.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion.show {
-  /*se utiliza la clase show para mostrar el contenedor puntuacion por js*/
-  display: flex;
-}
-
-.ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion p {
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-}
-
-.ContenedorMayorBotones .ContendorBotonInicio {
-  margin-top: 24px;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 #BotonInicio {
   background: rgb(156, 39, 176);
   border: none;
@@ -125,24 +161,6 @@ header nav li {
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
-}
-
-.MenuContenedor,
-.ContenedorModal {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 1; /*Indica una posición delante del objeto 0 index 0*/
-}
-
-.MenuContenedor.show, /*se utiliza la clase show para mostrar el modal ingresar nombre por js*/
-.ContenedorModal.show {
-  /*se utiliza la clase show para mostrar el modal de mensaje y puntuacion por js*/
-  display: flex;
 }
 
 #ContenedorNombre,
@@ -173,16 +191,6 @@ header nav li {
   margin-bottom: 16px;
 }
 
-.MenuContenedor .ContenedorBoton {
-  display: flex;
-  justify-content: center;
-}
-
-.ContenedorModal .CerrarModalContenedor {
-  display: flex;
-  justify-content: center;
-}
-
 #BotonNombre,
 #CerrarModal {
   background: rgb(156, 39, 176);
@@ -191,14 +199,6 @@ header nav li {
   color: rgb(255, 255, 255);
   font-weight: 600;
   border-radius: 50px;
-}
-
-.ContenedorModal {
-  display: none;
-}
-
-.ContenedorModal.MostrarModal {
-  display: flex;
 }
 
 /* Estilos para página de fomulario */
@@ -241,6 +241,7 @@ form#FormularioContacto .FormularioBloque textarea {
     height: 200px;
   }
 
+  /* Estilos para página de fomulario */
   form#FormularioContacto .FormularioBloque label {
     display: inline-block;
     vertical-align: top;
