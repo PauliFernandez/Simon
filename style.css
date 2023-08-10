@@ -1,230 +1,232 @@
-body{
-	background: rgb(39, 43, 52);;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 100vh;
-	margin: 0;
-	font-family: sans-serif;
+body {
+  background: rgb(39, 43, 52);
+  display: flex; /*Se utilza flex*/
+  justify-content: center; /*Centra el contenido horizontalmente*/
+  align-items: center; /*Centra el contenido verticalmente*/
+  flex-direction: column; /*Colocar los contenedores en columna uno debajo del otro*/
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif;
 }
 
 .ContenedorMayorBotones {
-	display: flex;
-	justify-content: center;
-	align-items: baseline;
-	flex-grow: 1;
-	margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline; /*Alinea el contenido verticalmente a la base del contenedor*/
+  margin-top: 20px;
 }
 
-.ContenedorBotones{
-	display: grid;
-	grid-template-columns: repeat(2, auto);
-	grid-template-rows: repeat(2, auto);
-	flex-grow: 1;
-	gap: 16px;
-	position: relative;
+.ContenedorBotones {
+  display: grid; /*Convierte el contenido en una tabla*/
+  grid-template-columns: repeat(
+    2,
+    auto
+  ); /*Convierte el contenido en tabla de 2x2*/
+  grid-template-rows: repeat(2, auto);
+  gap: 16px; /*	Espacio entre todos los elementos de la tabla*/
+  position: relative;
 }
 
-.BotonJuego{
-	width: 150px;
-	height: 150px;
-	margin: 0;
-	padding: 0;
-	border: none;
-	border-radius: 16px;
+.BotonJuego {
+  width: 150px;
+  height: 150px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 16px;
 }
 
 @media (min-width: 576px) {
-	.BotonJuego{
-		width: 200px;
-		height: 200px;
-	}	
+  .BotonJuego {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 #BotonRojo {
-	background: rgb(244, 67, 54);
+  background: rgb(244, 67, 54);
 }
 
 #BotonVerde {
-	background: rgb(76, 175, 80);
+  background: rgb(76, 175, 80);
 }
 
 #BotonAmarillo {
-	background: rgb(255, 235, 59);
+  background: rgb(255, 235, 59);
 }
 
 #BotonAzul {
-	background: rgb(63, 81, 181);
+  background: rgb(63, 81, 181);
 }
 
 #BotonRojo.show {
-	background: rgb(247, 126, 118);
+  background: rgb(247, 126, 118);
 }
 
 #BotonVerde.show {
-	background: rgb(131, 218, 134);
+  background: rgb(131, 218, 134);
 }
 
 #BotonAmarillo.show {
-	background: rgb(255, 243, 139);
+  background: rgb(255, 243, 139);
 }
 
 #BotonAzul.show {
-	background: rgb(111, 122, 184);
+  background: rgb(111, 122, 184);
 }
 
-.ContendorPuntuacion{
-	display: none;
-	margin-top: 2rem;
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
+.ContendorPuntuacion {
+  display: none; /* Oculto contenedor de puntuación*/
+  margin-top: 2rem;
+  position: absolute; /*Flota el elemento dentro del contenedor padre*/
+  top: 100%;
+  left: 50%; /*Muevo el eje izquierdo del contenido al 50%*/
+  transform: translateX(
+    -50%
+  ); /*Mueve el elemento sin cambiar el eje, utilizando el left como referencia*/
 }
 
 .ContendorPuntuacion.show {
-	display: flex;
+  /*se utiliza la clase show para mostrar el contenedor puntuacion por js*/
+  display: flex;
 }
 
-.ContendorPuntuacion p{
-	font-weight: bold;
-	color: rgb(255, 255, 255);
+.ContendorPuntuacion p {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
 }
 
-.MenuContenedor, .ContenedorModal{
-	display: none;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	position: absolute;
-	width: 100%;
-	top: 0;
-	z-index: 1;
+.MenuContenedor,
+.ContenedorModal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1; /*Indica una posición delante del objeto 0 index 0*/
 }
 
-.MenuContenedor.show,
-.ContenedorModal.show{
-	display: flex;
+.MenuContenedor.show, /*se utiliza la clase show para mostrar el modal ingresar nombre por js*/
+.ContenedorModal.show {
+  /*se utiliza la clase show para mostrar el modal de mensaje y puntuacion por js*/
+  display: flex;
 }
 
 #ContenedorNombre,
 #FondoModal {
-	background-color: rgb(34, 34, 34);
-	padding: 16px;
-	width: auto;
-	color: rgb(255, 255, 255);
-	border-radius: 8px;
-	box-shadow: 0px 4px 8px -3px rgb(0, 0, 0);
+  background-color: rgb(34, 34, 34);
+  padding: 16px;
+  width: auto;
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
 }
 
 #ContenedorNombre .titulo,
 #FondoModal .titulo {
-	text-align: center;
-	font-weight: 600;
-	font-size: 1.2rem;
-	margin-bottom: 16px;
+  text-align: center; /*Centra el texto horizontalmente*/
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
 }
 
 #FondoModal {
-	padding: 24px 60px;
+  padding: 24px 60px;
 }
 
-#Nombre{
-	border: 1px solid rgb(204, 204, 204);
-	padding: 10px;
-	border-radius: 4px;
-	margin-bottom: 16px;
-	display: block;
+#Nombre {
+  border: 1px solid rgb(204, 204, 204);
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
 }
 
 .ContenedorBoton {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .cerrar-modal-contenedor {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #BotonNombre,
 #CerrarModal {
-	background: rgb(156, 39, 176);
-	border: none;
-	padding: 0.7rem 2rem;
-	color: rgb(255, 255, 255);
-	font-weight: 600;
-	border-radius: 50px;
+  background: rgb(156, 39, 176);
+  border: none;
+  padding: 0.7rem 2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border-radius: 50px;
 }
 
-.ContenedorModal{
-	display: none;
+.ContenedorModal {
+  display: none;
 }
 
-.ContenedorModal.MostrarModal{
-	display: flex;
+.ContenedorModal.MostrarModal {
+  display: flex;
 }
 
 .ContendorBotonInicio {
-	margin-top: 24px;
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	transform: translateX(-50%);
+  margin-top: 24px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #BotonInicio {
-	background: rgb(156, 39, 176);
-	border: none;
-	padding: 0.7rem 2rem;
-	color: rgb(255, 255, 255);
-	font-weight: 600;
-	border-radius: 50px;
-	cursor: pointer;
+  background: rgb(156, 39, 176);
+  border: none;
+  padding: 0.7rem 2rem;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-
-header{
-	background-color: rgb(156, 39, 176);
-	width: 100%;
+header {
+  background-color: rgb(156, 39, 176);
+  width: 100%;
 }
 
-header nav{
-	margin: 20px 0;
+header nav {
+  margin: 20px 0;
 }
 
-header nav a{
-	color: rgb(255, 255, 255);
-	font-weight: 600;
-	text-decoration: none;
-	margin: 0 10px;
+header nav a {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
-header nav li{
-	display: inline;
+header nav li {
+  display: inline;
 }
 
-form{
-	background-color: rgb(156, 39, 176);
-	padding: 50px;
+form {
+  background-color: rgb(156, 39, 176);
+  padding: 50px;
 }
 
-.FormularioBloque h1{
-	color: rgb(255, 255, 255);
-	font-weight: 600;
-	font-size: 2rem;
-	margin-bottom: 30px;
-	text-align: center;
+.FormularioBloque h1 {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
-.FormularioBloque label{
-	color: rgb(255, 255, 255);
-	font-weight: 50;
-	font-size: 1rem;
-	width: 100px;
-	display: inline-block;
-	margin-bottom: 20px;
-	vertical-align: top;
+.FormularioBloque label {
+  color: rgb(255, 255, 255);
+  font-weight: 50;
+  font-size: 1rem;
+  width: 100px;
+  display: inline-block;
+  margin-bottom: 20px;
+  vertical-align: top;
 }
-

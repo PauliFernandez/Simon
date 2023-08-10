@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="reset.css"/>
-    <link rel="stylesheet" href="style.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
     <title>Simon</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="https://github.com/PauliFernandez/Simon" target="_blank">Repositorio</a>
-                </li>
-                <li>
-                    <a href="Contacto.html">Contacto</a>
-                </li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://github.com/PauliFernandez/Simon" target="_blank"
+              >Repositorio</a
+            >
+          </li>
+          <li>
+            <a href="Contacto.html">Contacto</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-        <div class="MenuContenedor">
-            <div id="ContenedorNombre">
-                <div class="titulo">Ingrese su nombre</div>
-                <input type="text" id="Nombre" placeholder="Ingresa tu nombre" required/>
-                <div class="ContenedorBoton"><button type="button" id="BotonNombre">Confirmar</button></div>
-            </div>
+    <div class="MenuContenedor">
+      <!--Contenedor para el modal ingresar nombre y confirmar -->
+      <div id="ContenedorNombre">
+        <div class="titulo">Ingrese su nombre</div>
+        <input
+          type="text"
+          id="Nombre"
+          placeholder="Ingresa tu nombre"
+          required
+        />
+        <div class="ContenedorBoton">
+          <button type="button" id="BotonNombre">Confirmar</button>
         </div>
-        
-        <div class="ContenedorMayorBotones">
-            <div class="ContenedorBotones">
-                <input class="BotonJuego" id="BotonRojo"  type="button" value=""/>
-                <input class="BotonJuego" id="BotonVerde" type="button" value=""/>
-                <input class="BotonJuego" id="BotonAmarillo" type="button" value=""/>
-                <input class="BotonJuego" id="BotonAzul" type="button" value=""/>
-    
-                <div class="ContendorBotonInicio">
-                    <button  id="BotonInicio" type="button">Empezar</button>
-                </div>
-                <div class="ContendorPuntuacion">
-                    <p>Puntuación: <span id="Puntuacion"></span> </p>
-                </div>
-            </div>
+      </div>
+    </div>
+
+    <div class="ContenedorMayorBotones">
+      <!--Contenedor para los botones del juego -->
+      <div class="ContenedorBotones">
+        <input class="BotonJuego" id="BotonRojo" type="button" value="" />
+        <input class="BotonJuego" id="BotonVerde" type="button" value="" />
+        <input class="BotonJuego" id="BotonAmarillo" type="button" value="" />
+        <input class="BotonJuego" id="BotonAzul" type="button" value="" />
+
+        <div class="ContendorBotonInicio">
+          <!--Contenedor para el botón de inicio del juego -->
+          <button id="BotonInicio" type="button">Empezar</button>
         </div>
-        <div class="ContenedorModal">
-            <div id="FondoModal">
-                <div id="ModalMensaje" class="titulo"></div>
-                <div id="PuntuacionAnterior" class="titulo"></div>
-                <div class="cerrar-modal-contenedor"><button type="button"  id="CerrarModal">Volver a jugar</button></div>
-            </div>
+        <div class="ContendorPuntuacion">
+          <p>Puntuación: <span id="Puntuacion"></span></p>
         </div>
+      </div>
+    </div>
+    <div class="ContenedorModal">
+      <!--Contenedor para el modal de mensajes y puntos-->
+      <div id="FondoModal">
+        <div id="ModalMensaje" class="titulo"></div>
+        <div id="PuntuacionAnterior" class="titulo"></div>
+        <div class="cerrar-modal-contenedor">
+          <button type="button" id="CerrarModal">Volver a jugar</button>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
