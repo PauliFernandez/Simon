@@ -1,17 +1,17 @@
 body {
-  background: rgb(39, 43, 52);
   display: flex; /*Se utilza flex*/
-  justify-content: center; /*Centra el contenido horizontalmente*/
   align-items: center; /*Centra el contenido verticalmente*/
   flex-direction: column; /*Colocar los contenedores en columna uno debajo del otro*/
+  justify-content: center; /*Centra el contenido horizontalmente*/
   height: 100%;
   margin: 0;
+  background: rgb(39, 43, 52);
   font-family: sans-serif;
 }
 
 header {
-  background-color: rgb(156, 39, 176);
   width: 100%;
+  background-color: rgb(156, 39, 176);
 }
 
 header nav {
@@ -19,10 +19,10 @@ header nav {
 }
 
 header nav a {
+  margin: 0 10px;
   color: rgb(255, 255, 255);
   font-weight: 600;
   text-decoration: none;
-  margin: 0 10px;
 }
 
 header nav li {
@@ -32,12 +32,12 @@ header nav li {
 .MenuContenedor,
 .ContenedorModal {
   display: none;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
   position: absolute;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
   top: 0;
+  height: 100%;
+  width: 100%;
   z-index: 1; /*Indica una posición delante del objeto 0 index 0*/
 }
 
@@ -54,25 +54,25 @@ header nav li {
 
 .ContenedorMayorBotones {
   display: flex;
-  justify-content: center;
   align-items: baseline; /*Alinea el contenido verticalmente a la base del contenedor*/
+  justify-content: center;
   margin-top: 20px;
 }
 
 .ContenedorMayorBotones .ContenedorBotones {
   display: grid; /*Convierte el contenido en una tabla*/
+  position: relative;
   grid-template-columns: repeat(
     2,
     auto
   ); /*Convierte el contenido en tabla de 2x2*/
   grid-template-rows: repeat(2, auto);
   gap: 16px; /*	Espacio entre todos los elementos de la tabla*/
-  position: relative;
 }
 
 .ContenedorMayorBotones .ContenedorBotones .BotonJuego {
-  width: 150px;
   height: 150px;
+  width: 150px;
   margin: 0;
   padding: 0;
   border: none;
@@ -81,10 +81,10 @@ header nav li {
 
 .ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion {
   display: none; /* Oculto contenedor de puntuación*/
-  margin-top: 32px;
   position: absolute; /*Flota el elemento dentro del contenedor padre*/
   top: 100%;
   left: 50%; /*Muevo el eje izquierdo del contenido al 50%*/
+  margin-top: 32px;
   transform: translateX(
     -50%
   ); /*Mueve el elemento sin cambiar el eje, utilizando el left como referencia*/
@@ -96,16 +96,16 @@ header nav li {
 }
 
 .ContenedorMayorBotones .ContenedorBotones .ContendorPuntuacion p {
-  font-weight: bold;
   color: rgb(255, 255, 255);
+  font-weight: bold;
 }
 
 .ContenedorMayorBotones .ContendorBotonInicio {
-  margin-top: 24px;
   position: absolute;
   top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  margin-top: 24px;
+  transform: translateX(-50%); /*Muevo el eje izquierdo del contenido al 50%*/
 }
 
 .ContenedorModal {
@@ -154,30 +154,30 @@ header nav li {
 }
 
 #BotonInicio {
-  background: rgb(156, 39, 176);
-  border: none;
   padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  background: rgb(156, 39, 176);
   color: rgb(255, 255, 255);
   font-weight: 600;
-  border-radius: 50px;
   cursor: pointer;
 }
 
 #ContenedorNombre,
 #FondoModal {
-  background-color: rgb(34, 34, 34);
-  padding: 16px;
   width: auto;
-  color: rgb(255, 255, 255);
+  padding: 16px;
   border-radius: 8px;
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
 }
 
 #ContenedorNombre .titulo,
 #FondoModal .titulo {
-  text-align: center; /*Centra el texto horizontalmente*/
-  font-weight: 600;
-  font-size: 20px;
   margin-bottom: 16px;
+  text-align: center; /*Centra el texto horizontalmente*/
+  font-size: 20px;
+  font-weight: 600;
 }
 
 #FondoModal {
@@ -185,27 +185,27 @@ header nav li {
 }
 
 #Nombre {
-  border: 1px solid rgb(204, 204, 204);
-  padding: 10px;
-  border-radius: 4px;
   margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
 }
 
 #BotonNombre,
 #CerrarModal {
-  background: rgb(156, 39, 176);
-  border: none;
   padding: 12px 32px;
+  border: none;
+  border-radius: 50px;
+  background: rgb(156, 39, 176);
   color: rgb(255, 255, 255);
   font-weight: 600;
-  border-radius: 50px;
 }
 
 /* Estilos para página de fomulario */
 form#FormularioContacto {
-  background-color: rgb(156, 39, 176);
-  padding: 50px;
   margin: 20px;
+  padding: 50px;
+  background-color: rgb(156, 39, 176);
 }
 
 form#FormularioContacto .FormularioBloque {
@@ -213,20 +213,20 @@ form#FormularioContacto .FormularioBloque {
 }
 
 form#FormularioContacto .FormularioBloque h1 {
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  font-size: 32px;
   margin-bottom: 30px;
   text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-weight: 600;
 }
 
 form#FormularioContacto .FormularioBloque label {
-  color: rgb(255, 255, 255);
-  font-weight: 50;
-  font-size: 16px;
-  width: 100px;
   display: block;
+  width: 100px;
   margin-bottom: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 50;
 }
 
 form#FormularioContacto .FormularioBloque input,
@@ -237,15 +237,15 @@ form#FormularioContacto .FormularioBloque textarea {
 /* Media query para móviles */
 @media (min-width: 576px) {
   .ContenedorMayorBotones .ContenedorBotones .BotonJuego {
-    width: 200px;
     height: 200px;
+    width: 200px;
   }
 
   /* Estilos para página de fomulario */
   form#FormularioContacto .FormularioBloque label {
     display: inline-block;
-    vertical-align: top;
     margin: 0;
+    vertical-align: top;
   }
 
   form#FormularioContacto .FormularioBloque input,

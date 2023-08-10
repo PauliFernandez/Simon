@@ -1,7 +1,29 @@
+"use strict";
+
 var Secuencia = [];
 var PosicionSecuencia = 0;
 var ModoJugador = false;
 var Puntaje = 0;
+
+var BotonInicio = document.getElementById("BotonInicio");
+
+BotonInicio.addEventListener("click", function () {
+  BotonInicio.style.display = "none";
+  MostrarInscripcion();
+});
+
+document
+  .getElementById("BotonNombre")
+  .addEventListener("click", function (event) {
+    var NombreJugador = document.getElementById("Nombre").value;
+    // Comprobar si el valor ingresado cumple con el patrón
+    if (NombreJugador.length < 3) {
+      MostrarModal("Ingrese mínimo 3 letras");
+      return;
+    }
+    document.querySelector(".MenuContenedor").classList.remove("show");
+    ComenzarJuego();
+  });
 
 //Obtiene el elemento del botón rojo
 var BotonRojo = document.getElementById("BotonRojo");
@@ -112,7 +134,7 @@ BotonAzul.addEventListener("click", function () {
 
 function ElegirColor() {
   setTimeout(function () {
-    if (PosicionSecuencia == Secuencia.length) {
+    if (PosicionSecuencia === Secuencia.length) {
       //Llegas al final de la secuencia y selecciono un nuevo color
       var NumeroElegido = Math.floor(Math.random() * 3 + 1);
       Secuencia.push(NumeroElegido);
@@ -135,8 +157,8 @@ function VerificarSecuencia(NumeroElegido) {
   if (!ModoJugador) {
     return;
   }
-  if (Secuencia[PosicionSecuencia] == NumeroElegido) {
-    if (PosicionSecuencia == Secuencia.length - 1) {
+  if (Secuencia[PosicionSecuencia] === NumeroElegido) {
+    if (PosicionSecuencia === Secuencia.length - 1) {
       PosicionSecuencia = 0;
       ModoJugador = false;
       ElegirColor();
@@ -144,7 +166,7 @@ function VerificarSecuencia(NumeroElegido) {
       PosicionSecuencia = PosicionSecuencia + 1;
     }
     Puntaje = Puntaje + 1;
-    document.getElementById("Puntuacion").innerHTML = Puntaje;
+    document.getElementById("Puntuacion").innerText = Puntaje;
   } else {
     ModoJugador = false;
     document.querySelector(".ContendorPuntuacion").classList.remove("show");
@@ -198,37 +220,19 @@ function PresionarSecuencia(NumeroElegido) {
   }
 }
 
-var BotonInicio = document.getElementById("BotonInicio");
-
 function ComenzarJuego() {
   PosicionSecuencia = 0;
   Secuencia = [];
   ModoJugador = false;
+  Puntaje = 0;
+  document.getElementById("Puntuacion").innerText = Puntaje;
+  document.querySelector(".ContendorPuntuacion").classList.add("show");
   ElegirColor();
 }
 
 function MostrarInscripcion() {
   document.querySelector(".MenuContenedor").classList.add("show");
 }
-
-BotonInicio.addEventListener("click", function () {
-  BotonInicio.style.display = "none";
-  document.querySelector(".ContendorPuntuacion").classList.add("show");
-  MostrarInscripcion();
-});
-
-document
-  .getElementById("BotonNombre")
-  .addEventListener("click", function (event) {
-    var NombreJugador = document.getElementById("Nombre").value;
-    // Comprobar si el valor ingresado cumple con el patrón
-    if (NombreJugador.length < 3) {
-      MostrarModal("Ingrese mínimo 3 letras");
-      return;
-    }
-    document.querySelector(".MenuContenedor").classList.remove("show");
-    ComenzarJuego();
-  });
 
 document
   .getElementById("CerrarModal")

@@ -1,3 +1,5 @@
+"use strict";
+
 var BotonEnviar = document.getElementById("EnviarContacto");
 BotonEnviar.addEventListener("click", function () {
   var CampoNombre = document.getElementById("NombreContacto");
