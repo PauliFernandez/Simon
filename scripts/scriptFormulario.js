@@ -1,36 +1,43 @@
 "use strict";
 
 var BotonEnviar = document.getElementById("EnviarContacto");
+// Cuando se reaiza click en el boton "enviar" trae los campos nombre, correo y msj
 BotonEnviar.addEventListener("click", function () {
   var CampoNombre = document.getElementById("NombreContacto");
   var CampoCorreo = document.getElementById("CorreoContacto");
   var CampoMensaje = document.getElementById("MensajeContacto");
 
+  // Valido si ingreso nombre
   if (CampoNombre.value.length === 0) {
     MostrarModal("Debe ingresar un nombre.");
     return;
   }
 
+  // Valido si es alfanumerico
   if (!EsAlfanumerico(CampoNombre.value)) {
     MostrarModal("El nombre debe completarse con valores alfanumericos.");
     return;
   }
 
+  // Valido el ingreso del correo
   if (CampoCorreo.value.length === 0) {
     MostrarModal("Debe ingresar un correo.");
     return;
   }
 
+  // Valido el formato del correo
   if (!CorreoValido(CampoCorreo.value)) {
     MostrarModal("El formato del correo no es correcto.");
     return;
   }
 
+  // Valida que la longitud del mensaje sea < 5
   if (CampoMensaje.value.length < 5) {
     MostrarModal("El mensaje debe tener al menos 5 caracteres.");
     return;
   }
 
+  // Redirecciona a mailto(abre la app de correo)
   location.href =
     "mailto:contacto@simon.com?subject=Contacto de " +
     CampoNombre.value +
@@ -43,21 +50,24 @@ BotonEnviar.addEventListener("click", function () {
     CampoMensaje.value;
 });
 
+// Funcion para validar que sea alfanumerico
 function EsAlfanumerico(Cadena) {
   var Tamaño;
 
+  // Recorre los caracteres para verificar que sean numeros o letras
   for (var i = 0, Tamaño = Cadena.length; i < Tamaño; i++) {
     var CodigoLetra = Cadena.charCodeAt(i);
     if (
-      !(CodigoLetra > 47 && CodigoLetra < 58) && // Numero (0-9)
-      !(CodigoLetra > 64 && CodigoLetra < 91) && // Letras Mayusculas (A-Z)
+      // Numero (0-9)
+      !(CodigoLetra > 47 && CodigoLetra < 58) && 
+      // Letras Mayusculas (A-Z)
+      !(CodigoLetra > 64 && CodigoLetra < 91) && 
+       // Letras Minusculas (a-z)
       !(CodigoLetra > 96 && CodigoLetra < 123)
     ) {
-      // Letras Minusculas (a-z)
       return false;
     }
   }
-
   return true;
 }
 
@@ -73,15 +83,17 @@ function CorreoValido(Correo) {
   );
 }
 
+// Cierra el modal del validador
 document.getElementById("CerrarModal").addEventListener("click", function () {
   document
-    .getElementsByClassName("ContenedorModal")[0]
+    .querySelector(".ContenedorModal")
     .classList.remove("MostrarModal");
 });
 
+// Muestra el modal del validador
 function MostrarModal(Mensaje) {
   document.getElementById("ModalMensaje").innerText = Mensaje;
   document
-    .getElementsByClassName("ContenedorModal")[0]
+    .querySelector(".ContenedorModal")
     .classList.add("MostrarModal");
 }

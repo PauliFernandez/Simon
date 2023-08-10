@@ -29,7 +29,7 @@ header nav li {
   display: inline;
 }
 
-.MenuContenedor,
+.MenuInscripcion,
 .ContenedorModal {
   display: none;
   position: absolute;
@@ -41,13 +41,13 @@ header nav li {
   z-index: 1; /*Indica una posición delante del objeto 0 index 0*/
 }
 
-.MenuContenedor.show, /*se utiliza la clase show para mostrar el modal ingresar nombre por js*/
+.MenuInscripcion.show, /*se utiliza la clase show para mostrar el modal ingresar nombre por js*/
 .ContenedorModal.show {
   /*se utiliza la clase show para mostrar el modal de mensaje y puntuacion por js*/
   display: flex;
 }
 
-.MenuContenedor .ContenedorBoton {
+.MenuInscripcion .ContenedorBoton {
   display: flex;
   justify-content: center;
 }
