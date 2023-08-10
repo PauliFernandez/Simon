@@ -9,6 +9,26 @@ body {
   font-family: sans-serif;
 }
 
+header {
+  background-color: rgb(156, 39, 176);
+  width: 100%;
+}
+
+header nav {
+  margin: 20px 0;
+}
+
+header nav a {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+header nav li {
+  display: inline;
+}
+
 .ContenedorMayorBotones {
   display: flex;
   justify-content: center;
@@ -34,13 +54,6 @@ body {
   padding: 0;
   border: none;
   border-radius: 16px;
-}
-
-@media (min-width: 576px) {
-  .BotonJuego {
-    width: 200px;
-    height: 200px;
-  }
 }
 
 #BotonRojo {
@@ -188,29 +201,10 @@ body {
   cursor: pointer;
 }
 
-header {
-  background-color: rgb(156, 39, 176);
-  width: 100%;
-}
-
-header nav {
-  margin: 20px 0;
-}
-
-header nav a {
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-header nav li {
-  display: inline;
-}
-
 form {
   background-color: rgb(156, 39, 176);
   padding: 50px;
+  margin-top: 20px;
 }
 
 .FormularioBloque h1 {
@@ -229,4 +223,12 @@ form {
   display: inline-block;
   margin-bottom: 20px;
   vertical-align: top;
+}
+
+/* Media query para móviles */
+@media (min-width: 576px) {
+  .BotonJuego {
+    width: 200px;
+    height: 200px;
+  }
 }
