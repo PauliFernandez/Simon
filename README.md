@@ -6,11 +6,11 @@ https://paulifernandez.github.io/Simon/
 
 ## Estructura de archivos
 
-**index.html**: Página principal para iniciar el juego.
-**contacto.html**: Página de contacto.
-**reset.css**: Archivo de reset de estilos.
-**style.css**: Estilos personalizados.
-**script.js**: Archivo con la funcionalidad JavaScript para implementar en index.html.
+**index.html**: Página principal para iniciar el juego.<br>
+**contacto.html**: Página de contacto.<br>
+**reset.css**: Archivo de reset de estilos.<br>
+**style.css**: Estilos personalizados.<br>
+**script.js**: Archivo con la funcionalidad JavaScript para implementar en index.html.<br>
 **scriptFormulario**: : Archivo con la funcionalidad JavaScript para implementar en contacto.html.
 
 ## Instrucciones de uso
