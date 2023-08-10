@@ -205,7 +205,11 @@ header nav li {
 form#FormularioContacto {
   background-color: rgb(156, 39, 176);
   padding: 50px;
-  margin-top: 20px;
+  margin: 20px;
+}
+
+form#FormularioContacto .FormularioBloque {
+  margin: 20px 0;
 }
 
 form#FormularioContacto .FormularioBloque h1 {
@@ -221,9 +225,13 @@ form#FormularioContacto .FormularioBloque label {
   font-weight: 50;
   font-size: 16px;
   width: 100px;
-  display: inline-block;
-  margin-bottom: 20px;
-  vertical-align: top;
+  display: block;
+  margin-bottom: 5px;
+}
+
+form#FormularioContacto .FormularioBloque input,
+form#FormularioContacto .FormularioBloque textarea {
+  width: 100%;
 }
 
 /* Media query para móviles */
@@ -231,5 +239,16 @@ form#FormularioContacto .FormularioBloque label {
   .ContenedorMayorBotones .ContenedorBotones .BotonJuego {
     width: 200px;
     height: 200px;
+  }
+
+  form#FormularioContacto .FormularioBloque label {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+  }
+
+  form#FormularioContacto .FormularioBloque input,
+  form#FormularioContacto .FormularioBloque textarea {
+    width: auto;
   }
 }
